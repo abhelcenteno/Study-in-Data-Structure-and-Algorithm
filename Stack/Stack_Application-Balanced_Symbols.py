@@ -23,4 +23,6 @@ def partner_check(symbol1, symbol2):
     return opening.index(symbol1) == closing.index(symbol2)
 
 
-print(sym_checker(')'))
+print(sym_checker('()()(([]{}))([])()'))
+print(sym_checker('(()()(([]{}))([])()'))
+print(sym_checker(')('))
