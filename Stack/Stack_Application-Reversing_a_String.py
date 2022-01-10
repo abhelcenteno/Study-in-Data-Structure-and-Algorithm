@@ -1,5 +1,6 @@
 from Stack_Class import Stack
 
+
 def rev_string(my_str):
     answer = Stack()
     for letter in my_str:
@@ -11,4 +12,4 @@ def rev_string(my_str):
     return rev_ans
 
 
-print(rev_string('asdfghjkl'))
+print(rev_string('the quick brown fox'))
