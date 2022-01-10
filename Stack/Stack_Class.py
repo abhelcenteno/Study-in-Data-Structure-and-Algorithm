@@ -20,18 +20,3 @@ class Stack:
 
     def __str__(self):
         return str(self.items)
-
-
-# Reversing a string using Stack Class
-def rev_string(my_str):
-    answer = Stack()
-    for letter in my_str:
-        answer.push(letter)
-    rev_ans = ''
-    while not answer.is_empty():
-        rev_ans += answer.pop()
-
-    return rev_ans
-
-
-print(rev_string('asdfghjkl'))
