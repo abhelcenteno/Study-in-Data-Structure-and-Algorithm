@@ -10,12 +10,11 @@ class Node:
 
     @data.setter
     def data(self, node_data):
-        print('executed')
         self._data = node_data
 
     @property
     def next(self):
-        return  self._next
+        return self._next
 
     @next.setter
     def next(self, node_next):
