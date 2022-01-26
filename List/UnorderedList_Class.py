@@ -114,6 +114,19 @@ class UnorderedList:
             previous.next = current.next
             return current.data
 
+    def reverse(self):
+        if self.head is None:
+            return None
+        current = self.head
+        previous = None
+        next = None
+        while current is not None:
+            next = current.next
+            current.next = previous
+            previous = current
+            current = next
+        self.head = previous
+
     def __str__(self):
         current = self.head
         list_container = []
@@ -122,10 +135,53 @@ class UnorderedList:
             current = current.next
         return str(list_container)
 
+ulist1 = UnorderedList()
+ulist1.add(1)
+ulist1.add(2)
+ulist1.add(3)
+ulist1.add(4)
+ulist1.add(5)
+ulist1.add(6)
+ulist1.add(7)
+print(ulist1)
 
-ulist = UnorderedList()
-ulist.add(1)
-ulist.add(2)
-ulist.add(3)
-ulist.add(4)
-ulist.add(5)
+ulist2 = UnorderedList()
+ulist2.add('a')
+ulist2.add('b')
+ulist2.add('c')
+# ulist2.add('d')
+# ulist2.add('e')
+print(ulist2)
+
+def zip_list(list1, list2):
+    head = list1
+    tail = list1
+    current1 = list1.next
+    current2 = list2
+    counter = 0
+
+    while current1 is not None and current2 is not None:
+        if counter % 2 == 0:
+            tail.next = current2
+            tail = current2
+            current2 = current2.next
+        else:
+            tail.next = current1
+            tail = current1
+            current1 = current1.next
+        counter += 1
+
+    if current1 is None:
+        tail.next = current2
+    elif current2 is None:
+        tail.next = current1
+
+
+    current = head
+    list_container = []
+    while current is not None:
+        list_container.append(str(current))
+        current = current.next
+    return str(list_container)
+
+print(zip_list(ulist1.head, ulist2.head))
