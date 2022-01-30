@@ -1,4 +1,5 @@
-def coin_change1(coin_list, change, memo):  # in-depth recursion from top to bottom to top with the help of memoization
+def coin_change1(coin_list, change, memo={}):
+    # in-depth recursion from top to bottom to top with the help of memoization
     min_coins = change
     if change in coin_list:
         memo[change] = 1
@@ -27,5 +28,5 @@ def coin_change2(coin_list, change):  # from bottom to top
 
 # plan soon is to make coin_change that outputs which coins or denomination is to be used
 
-print(coin_change1([1, 5, 10, 25], 100, {}))
+print(coin_change1([1, 5, 10, 25], 100))
 print(coin_change2([20, 50, 100, 200, 500, 1000], 200000))
