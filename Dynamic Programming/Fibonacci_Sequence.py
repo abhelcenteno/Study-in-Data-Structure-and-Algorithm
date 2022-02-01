@@ -17,6 +17,27 @@ def fib2(n, memo={}):  # optimized using memoization
         memo[n] = ans
         return memo[n]
 
+def fib3(num):
+    table = [0, 1]
+    if num in table:
+        return table[num]
+
+    for n in range(2,num+1):
+        table.append(table[n-2] + table[n-1])
+
+    return table[num]
+
+def fib4(num):
+    a = 0
+    b = 1
+
+    for n in range(num):
+        a, b = b, a+b
+
+    return a
+
 
 print(fib1(10))
-print(fib2(10))
+print(fib2(1000))
+print(fib3(1000))
+print(fib4(100000))
